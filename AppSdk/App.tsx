@@ -1,131 +1,62 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { SafeAreaView, View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import { MainScreen } from './src/screens/MainScreen';
+import { SettingScreen } from './src/screens/SettingScreen';
+import { WebviewScreen } from './src/screens/WebviewScreen';
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
+  
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="Main" options={{ headerShown: false }}>
+              {() => (
+                <Tab.Navigator 
+                  screenOptions={{ headerShown: false, tabBarStyle: { height: 60, borderTopLeftRadius: 12, borderTopRightRadius: 12, borderTopWidth: 1, borderColor: '#F6F6F6' }, animation:"shift" }}
+                >
+                     <Tab.Screen
+                    name="main" 
+                    component={MainScreen} 
+                    options={{ tabBarIcon: ( { focused } ) => (
+                      <View style={{ marginTop: 8}}>
+                          {focused ? <Text>main</Text> : <Text>main</Text>}
+                      </View>
+                    ),
+                    tabBarLabel: ( { focused } ) => (
+                      <Text style={{ color: focused ? '#0033CC' : '#707070', textAlign: 'center',marginTop:7,fontSize:12,fontWeight:focused ? '600' : '400' }}>main</Text>
+                    )
+                  }} 
+                  />
+                             <Tab.Screen
+                    name="setting" 
+                    component={SettingScreen} 
+                    options={{ tabBarIcon: ( { focused } ) => (
+                      <View style={{ marginTop: 8}}>
+                          {focused ? <Text>setting</Text> : <Text>setting</Text>}
+                      </View>
+                    ),
+                    tabBarLabel: ( { focused } ) => (
+                      <Text style={{ color: focused ? '#0033CC' : '#707070', textAlign: 'center',marginTop:7,fontSize:12,fontWeight:focused ? '600' : '400' }}>setting</Text>
+                    )
+                  }} 
+                  />
+                
+                </Tab.Navigator>
+              )}
+            </Stack.Screen>
+            <Stack.Screen name="WebviewScreen" component={WebviewScreen} options={{ headerShown: false }} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </GestureHandlerRootView>
+    </SafeAreaView>
   );
 }
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  /*
-   * To keep the template simple and small we're adding padding to prevent view
-   * from rendering under the System UI.
-   * For bigger apps the reccomendation is to use `react-native-safe-area-context`:
-   * https://github.com/AppAndFlow/react-native-safe-area-context
-   *
-   * You can read more about it here:
-   * https://github.com/react-native-community/discussions-and-proposals/discussions/827
-   */
-  const safePadding = '5%';
-
-  return (
-    <View style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        style={backgroundStyle}>
-        <View style={{paddingRight: safePadding}}>
-          <Header/>
-        </View>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            paddingHorizontal: safePadding,
-            paddingBottom: safePadding,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
-export default App;
+export default App
