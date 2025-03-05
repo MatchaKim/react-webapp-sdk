@@ -1,10 +1,13 @@
-import { View, Text } from 'react-native';
+import { View, Text, Button, Pressable } from 'react-native';
 import { SettingScreenProps } from './SettingScreen.props';
-
+import ToastUtils from '@/components/Toast/Toast.utils';
 const SettingScreen : React.FC<SettingScreenProps> = ({ navigation }) => {
     return (
         <View>
             <Text>SettingScreen</Text>
+            <Pressable onPress={() => ToastUtils.show("hello")}>
+                <Text>show Toast</Text>
+            </Pressable>
         </View>
     )
 }

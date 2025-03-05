@@ -24,6 +24,15 @@ function App() {
       })}>
         Send Message to WebView
       </button>
+      <button onClick={() => sendDataToWebView({
+        action: {
+          type: 'toast',
+          detail: 'show',
+          message: 'hello'
+        },
+      })}>
+        show Toast
+      </button>
     </>
   )
 }

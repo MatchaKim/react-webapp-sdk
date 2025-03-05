@@ -6,13 +6,15 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { MainScreen } from './src/screens/MainScreen';
 import { SettingScreen } from './src/screens/SettingScreen';
 import { WebviewScreen } from './src/screens/WebviewScreen';
+import { Provider } from 'react-redux';
+import Toast from './src/components/Toast/Toast';
+import store  from './src/components/Toast/Toast.store';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
 const App = () => {
-  
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <Provider store={store}>
       <GestureHandlerRootView style={{ flex: 1 }}>
         <NavigationContainer>
           <Stack.Navigator>
@@ -53,8 +55,10 @@ const App = () => {
             </Stack.Screen>
             <Stack.Screen name="WebviewScreen" component={WebviewScreen} options={{ headerShown: false }} />
           </Stack.Navigator>
+          <Toast />
         </NavigationContainer>
       </GestureHandlerRootView>
+      </Provider>
     </SafeAreaView>
   );
 }
