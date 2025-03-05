@@ -1,29 +1,23 @@
-import { View } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 import WebView from 'react-native-webview';
 import { WebviewScreenProps } from './WebviewScreen.props';
 import React from 'react';
-import { MessageInterface } from '@sdk/types/MessageInterface.types';
+import { handleWebViewMessage } from './Webview.utils';
+import { BaseHeader } from '@/components/BaseHeader';
 const WebviewScreen: React.FC<WebviewScreenProps> = ({ navigation, route }) => {
     const { url } = route.params;
-    console.log('Navigating to:', url);
 
-    const handleWebViewMessage = (event: any) => {
-        const data = event.nativeEvent.data;
-        const message: MessageInterface = JSON.parse(data);
-        console.log('Received message from JS:', message);
-        if (message.action.type === 'webview' && message.action.detail === 'open') {
-        console.log('message.data:', message.action.url);
-          navigation.push('WebviewScreen', { url: message.action.url });
-        }
-    }
-  
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: 'transparent' }}>
+        <BaseHeader headerBackgroundColor='transparent' navigation={navigation} />
         <WebView
           source={{ uri: url }}
-          onMessage={(event : any) => handleWebViewMessage(event)}
+          onMessage={(event : any) => handleWebViewMessage(event, navigation)}
           javaScriptEnabled={true}
           domStorageEnabled={true}
+          renderLoading={() => <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'transparent'}}>
+            <ActivityIndicator size="large" color="#0000ff"/>
+        </View>}
         />
       </View>
     );
