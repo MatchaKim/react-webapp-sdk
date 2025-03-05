@@ -1,4 +1,4 @@
-import { MessageInterface } from '../../sdk/types/MessageInterface.types';
+import { MessageInterface } from '@sdk/types/MessageInterface.types';
 
 declare global {
   interface Window {
