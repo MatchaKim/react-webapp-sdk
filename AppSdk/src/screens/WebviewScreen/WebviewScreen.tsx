@@ -2,7 +2,7 @@ import { View } from 'react-native';
 import WebView from 'react-native-webview';
 import { WebviewScreenProps } from './WebviewScreen.props';
 import React from 'react';
-import { MessageInterface } from '../../../../sdk/types/MessageInterface.types';
+import { MessageInterface } from '@sdk/types/MessageInterface.types';
 const WebviewScreen: React.FC<WebviewScreenProps> = ({ navigation, route }) => {
     const { url } = route.params;
     console.log('Navigating to:', url);
@@ -12,8 +12,8 @@ const WebviewScreen: React.FC<WebviewScreenProps> = ({ navigation, route }) => {
         const message: MessageInterface = JSON.parse(data);
         console.log('Received message from JS:', message);
         if (message.action.type === 'webview' && message.action.detail === 'open') {
-        console.log('message.data:', message.data);
-          navigation.push('WebviewScreen', { url: message.data });
+        console.log('message.data:', message.action.url);
+          navigation.push('WebviewScreen', { url: message.action.url });
         }
     }
   

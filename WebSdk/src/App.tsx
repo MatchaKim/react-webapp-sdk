@@ -18,9 +18,9 @@ function App() {
       <button onClick={() => sendDataToWebView({
         action: {
           type: 'webview',
-          detail: 'open'
+          detail: 'open',
+          url: 'http://localhost:5173'
         },
-        data: 'http://localhost:5173'
       })}>
         Send Message to WebView
       </button>
