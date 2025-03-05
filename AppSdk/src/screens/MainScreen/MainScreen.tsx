@@ -6,7 +6,7 @@ const MainScreen: React.FC<MainScreenProps> = ({ navigation }) => {
         <View>
             <Button
                 title="Webview"
-                onPress={() => navigation.navigate('WebviewScreen', { url: 'https://www.naver.com' })}
+                onPress={() => navigation.navigate('WebviewScreen', { url: 'http://localhost:5173' })}
             />
         </View>
     )
