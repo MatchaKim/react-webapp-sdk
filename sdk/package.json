@@ -1,0 +1,33 @@
+{
+  "name": "react-webapp-sdk",
+  "version": "1.0.0",
+  "description": "SDK for React and React Native with smooth performance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatchaKim/WebAppSdk.git"
+  },
+  "keywords": [
+    "webapp",
+    "hybrid"
+  ],
+  "author": "matcha-kim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MatchaKim/WebAppSdk/issues"
+  },
+  "homepage": "https://github.com/MatchaKim/WebAppSdk#readme",
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.6.0",
+    "react": "^19.0.0",
+    "react-native": "^0.78.0",
+    "react-native-webview": "^13.13.2",
+    "react-redux": "^9.2.0"
+  }
+}
