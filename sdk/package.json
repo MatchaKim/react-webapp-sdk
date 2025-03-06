@@ -1,6 +1,6 @@
 {
   "name": "react-webapp-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SDK for React and React Native with smooth performance",
   "main": "index.js",
   "scripts": {
