@@ -3,7 +3,8 @@
 
 > A Lightweight and Flexible SDK for Web App Development
 
-[![npm version](https://img.shields.io/npm/v/webapp-sdk.svg)](https://www.npmjs.com/package/webapp-sdk) [![license](https://img.shields.io/github/license/MatchaKim/WebAppSdk.svg)](https://github.com/MatchaKim/WebAppSdk/blob/main/LICENSE) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg)](https://github.com/MatchaKim/WebAppSdk/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+[![npm version](https://img.shields.io/npm/v/react-webapp-sdk.svg)](https://www.npmjs.com/package/react-webapp-sdk) [![license](https://img.shields.io/badge/license-MIT-white.svg)](https://opensource.org/licenses/MIT)
+ [![PRs welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg)](https://github.com/MatchaKim/WebAppSdk/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
 
 ## 🚩 Table of Contents
 
