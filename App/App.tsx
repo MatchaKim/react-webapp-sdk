@@ -6,7 +6,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { MainScreen } from './src/screens/MainScreen';
 import { SettingScreen } from './src/screens/SettingScreen';
 import { WebviewScreen } from './src/screens/WebviewScreen';
-import ToastProvider from 'react-webapp-sdk/src/app/components/Toast/ToastProvider';
+import ToastProvider from 'react-webapp-sdk/app/components/Toast/ToastProvider';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
