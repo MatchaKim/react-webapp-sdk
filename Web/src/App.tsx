@@ -21,6 +21,18 @@ function App() {
       })}>
         show Toast
       </button>
+      <button onClick={() => sendDataToWebView({
+        action: {
+          type: 'bottomSheet',
+          detail: 'open',
+          content: {
+            header: 'hello 1234567890',
+            content: 'hello world 1234567890 TypeScript에서 모듈로 인식되는 파일에서는 UMD 전역 변수를 직접 TypeScript에서 모듈로 인식되는 파일에서는 UMD 전TypeScript에서 모듈로 인식되는 파일에서는 UMD 전역 변수를 직접 사용할 수 없습니다TypeScript에서 모듈로 인식되는 파일에서는 UMD 전역 변수를 직접 사용할 수 없습니다TypeScript에서 모듈로 인식되는 파일에서는 UMD 전역 변수를 직접 사용할 수 없습니다TypeScript에서 모듈로 인식되는 파일에서는 UMD 전역 변수를 직접 사용할 수 없습니다TypeScript에서 모듈로 인식되는 파일에서는 UMD 전역 변수를 직접 사용할 수 없습니다역 변수를 직접 사용할 수 없습니다사용할 수 없습니다'
+          }
+        },
+      })}>
+        show BottomSheet
+      </button>
     </>
   )
 }

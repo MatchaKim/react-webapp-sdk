@@ -1,3 +1,4 @@
+import React from 'react';
 import { WebView } from 'react-native-webview';
 import { WebviewKitProps } from './WebviewKit.props';
 import { View, ActivityIndicator } from 'react-native';

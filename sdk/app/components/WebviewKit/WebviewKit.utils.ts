@@ -1,6 +1,6 @@
 import { MessageInterface } from '../../../common/types/MessageInterface.types';
 import ToastUtils from '../../components/Toast/Toast.utils';
-
+import BottomSheetUtils from '../../components/BottomSheet/BottomSheet.utils';
 export const handleWebViewMessage = (event: any, navigation: any) => {
     const data = event.nativeEvent.data;
     const message: MessageInterface = JSON.parse(data);
@@ -16,5 +16,11 @@ export const handleWebViewMessage = (event: any, navigation: any) => {
     }
     if(message.action.type === 'toast' && message.action.detail === 'hide') {
       ToastUtils.hide();
+    }
+    if(message.action.type === 'bottomSheet' && message.action.detail === 'open') {
+      BottomSheetUtils.show(message.action.content.header, message.action.content.content , "커스텀 닫기");
+    }
+    if(message.action.type === 'bottomSheet' && message.action.detail === 'close') {
+      BottomSheetUtils.hide();
     }
 }

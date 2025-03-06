@@ -7,13 +7,14 @@ import { MainScreen } from './src/screens/MainScreen';
 import { SettingScreen } from './src/screens/SettingScreen';
 import { WebviewScreen } from './src/screens/WebviewScreen';
 import ToastProvider from 'react-webapp-sdk/app/components/Toast/ToastProvider';
-
+import BottomSheetProvider from 'react-webapp-sdk/app/components/BottomSheet/BottomSheetProvider';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const App = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ToastProvider>
+      <BottomSheetProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
         <NavigationContainer>
           <Stack.Navigator>
@@ -56,6 +57,7 @@ const App = () => {
           </Stack.Navigator>
         </NavigationContainer>
       </GestureHandlerRootView>
+      </BottomSheetProvider>
       </ToastProvider>
     </SafeAreaView>
   );

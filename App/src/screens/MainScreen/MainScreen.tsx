@@ -1,10 +1,10 @@
-import { View, Text, Button, Modal, Keyboard } from 'react-native';
+import { View, Button, Text } from 'react-native';
 import { MainScreenProps } from './MainScreen.props';
 import React from 'react';
 import { TextInput } from 'react-native-gesture-handler';
 
-const MainScreen: React.FC<MainScreenProps> = ({ navigation }) => {
 
+const MainScreen: React.FC<MainScreenProps> = ({ navigation }) => {
     return (
         <View
             style={{ flex: 1, alignItems: 'center' }}

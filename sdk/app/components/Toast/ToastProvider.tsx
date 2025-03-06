@@ -1,6 +1,7 @@
 import { Provider } from 'react-redux';
 import Toast from './Toast';
 import store  from './Toast.store';
+import React from 'react';
 
 
 
