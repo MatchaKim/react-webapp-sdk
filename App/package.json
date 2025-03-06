@@ -1,5 +1,5 @@
 {
-  "name": "AppSdk",
+  "name": "app-sdk",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -22,7 +22,7 @@
     "react-native-screens": "^4.9.1",
     "react-native-webview": "^13.13.2",
     "react-redux": "^9.2.0",
-    "react-webapp-sdk": "^1.0.0"
+    "react-webapp-sdk": "1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

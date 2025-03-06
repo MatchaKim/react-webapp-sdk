@@ -1,4 +1,4 @@
-import { sendDataToWebView } from 'react-webapp-sdk/src/web/utils/webCommonUtils';
+import { sendDataToWebView } from 'react-webapp-sdk/web/utils/webCommonUtils';
 
 function App() {
   return (
