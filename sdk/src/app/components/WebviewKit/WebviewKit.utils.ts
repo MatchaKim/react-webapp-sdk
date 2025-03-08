@@ -1,9 +1,10 @@
-import { MessageInterface } from '../../../common/types/MessageInterface.types';
-import ToastUtils from '../../components/Toast/Toast.utils';
-import BottomSheetUtils from '../../components/BottomSheet/BottomSheet.utils';
+import { MessageInterface } from '@sdk/common/types/MessageInterface.types';
+import ToastUtils from '../Toast/Toast.utils';
+import BottomSheetUtils from '../BottomSheet/BottomSheet.utils';
 export const handleWebViewMessage = (event: any, navigation: any) => {
     const data = event.nativeEvent.data;
     const message: MessageInterface = JSON.parse(data);
+    
     console.log('Received message from JS:', message);
     if (message.action.type === 'webview' && message.action.detail === 'open') {
       navigation.push('WebviewScreen', { url: message.action.url });

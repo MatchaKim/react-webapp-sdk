@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import bottomSheetReducer from './BottomSheet.slice';
 
+
 const store = configureStore({
   reducer: {
     bottomSheet: bottomSheetReducer,

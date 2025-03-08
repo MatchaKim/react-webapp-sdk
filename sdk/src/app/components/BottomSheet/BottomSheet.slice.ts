@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface BottomSheetState {
+export interface BottomSheetState {
   visible: boolean;
   header: string;
   contentString: string;

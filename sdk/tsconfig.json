@@ -4,10 +4,15 @@
     "declaration": true,
     "baseUrl": ".",
     "paths": {
-      "@sdk/*": ["src/app/*"]
+      "@sdk/*": ["src/*"]
     },
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "skipLibCheck": true
   },
-  "include": ["src/app"]
+  "include": ["src"],
 }
+
