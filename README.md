@@ -37,7 +37,7 @@ Seamless and smooth navigation within WebView.
 ### ✅ 2. Toast  
 App notifications.
 
-### 🚧 3. Bottom Sheet (In Development)  
+### ✅ 3. Bottom Sheet (In Development)  
 A flexible bottom sheet component (under development).  
 
 ## 🐾 Examples
